@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background-color: #ffffff;
+}
+.sidebar{
+  position: fixed;
+  width: 240px;
+  left: -240px;
+  height: 100%;
+  background: #105381;
+  transition: all .5s ease;
+}
+.sidebar header{
+  font-size: 28px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #079992;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.sidebar a{
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: white;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 5px solid transparent;
+  font-family: 'Open Sans', sans-serif;
+  transition: all .5s ease;
+}
+a.active,a:hover{
+  border-left: 5px solid #66ff99;
+  color: #66ff99;
+}
+.sidebar a i{
+  font-size: 23px;
+  margin-right: 16px;
+}
+.sidebar a span{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #262626;
+  margin: 15px 30px;
+  font-size: 29px;
+  background: #262626;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+}
+label #cancel{
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel{
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+#center-text h1{
+  text-align: center;
+  color:black;
+  margin-left: 12%;
+}
+.search__container{
+    margin-left: 28%;
+    margin-top: 3%;
+    width: 55%;
+    height: 60px;
+    /* background: white; */
+    border-radius: 30px;
+    position: relative;
+}
+.input{
+    width:95%;
+    height:35px;
+    display: block;
+    border-radius: 30px;
+    padding-left: 20px;
+    font-size: 25px;
+    border-width: 1px;
+    font-weight: 1px;
+    /* outline: none;
+    border:none; */
+}
+.button{
+    position:absolute;
+    /* right: -5px; */
+    top:0;
+    right:0;
+    width:50px;
+    height:65%;
+    background: #105381;
+    color:white;
+    border-radius: 50%;
+    font-size: 25px;
+    border-width: 1px;
+    /* margin-right: 0; */
+}
+.button:hover{
+    background: #079992;
+}
+.table{
+  margin-top: 2%;
+  margin-left: 5%;
+  width: 90%;
+  margin-bottom: 5%;
+}
+tr td{
+  color: white;
+  background: #079992;
+  padding: 30px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+tr th{
+  color: #105381;
+  font-size: 18px;
+  padding: 20px;
+}
+.table-card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 #079992;
+    transition: 0.3s;
+    margin-left: 18%;
+    width:80%;
+    margin-top:0;
+    margin-bottom: 20px;
+    background: white;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .table-card:hover {
+    box-shadow: 0 8px 16px 0 #079992;
+  }
+@media(max-width : 860px){
+  .sidebar{
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin: 100px 0;
+  }
+  header,#btn,#cancel{
+    display: none;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a{
+    height: 60px;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+  }
+  a:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar a:hover span{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
