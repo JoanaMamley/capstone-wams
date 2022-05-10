@@ -1,8 +1,10 @@
+#include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
+#include <ESP8266WebServer.h>
 #include <WiFiClient.h>
 #include <Adafruit_Fingerprint.h>
 #include <SoftwareSerial.h>
@@ -110,16 +112,17 @@ void displayMainScreen(){
   void _sendDataToDatabase(String x) {
   HTTPClient https;
   WiFiClient _client;
-  String url = "http://192.168.152.4/capstone/capstone-wams/getData.php?insert=1&data="+dataType+"&value="+ x;
+  String url = "http://192.168.3.4/capstone/capstone-wams/software/getData.php?insert=1&data="+dataType+"&value="+ x;
   Serial.println(url);
   https.begin(_client,url);
   int httpsCode = https.GET();
+  Serial.println(httpsCode);
   if(httpsCode > 0) {
     Serial.println("done");
   }
-//  else{
-//    Serial.println("error");
-//    }
+  else{
+    Serial.println("error");
+    }
   String result = https.getString();
   Serial.println(result);
 }
